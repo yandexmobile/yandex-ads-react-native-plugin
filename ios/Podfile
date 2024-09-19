@@ -1,0 +1,51 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+target 'YandexMobileAdsSample' do
+  config = use_native_modules!
+
+  pod 'AdColonyYandexMobileAdsAdapters', '4.9.0.20'
+  pod 'AppLovinYandexMobileAdsAdapters', '12.6.0.0'
+  pod 'ChartboostYandexMobileAdsAdapters', '9.7.0.9'
+  pod 'GoogleYandexMobileAdsAdapters', '11.7.0.0'
+  pod 'InMobiYandexMobileAdsAdapters', '10.7.4.4'
+  pod 'IronSourceYandexMobileAdsAdapters', '8.2.0.3'
+  pod 'StartAppYandexMobileAdsAdapters', '4.10.4.0'
+  pod 'VungleYandexMobileAdsAdapters', '7.4.0.4'
+  pod 'UnityAdsYandexMobileAdsAdapters', '4.12.2.0'
+  pod 'MyTargetYandexMobileAdsAdapters', '5.21.6.0'
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  target 'YandexMobileAdsSampleTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  post_install do |installer|
+    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false,
+      # :ccache_enabled => true
+    )
+  end
+end
