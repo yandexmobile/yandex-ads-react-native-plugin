@@ -1,0 +1,39 @@
+buildscript {
+    ext {
+        buildToolsVersion = "34.0.0"
+        minSdkVersion = 23
+        compileSdkVersion = 34
+        targetSdkVersion = 34
+        ndkVersion = "26.1.10909125"
+        kotlinVersion = "1.9.24"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+allprojects {
+    repositories {
+        // IronSource
+        maven { url = uri("https://android-sdk.is.com/") }
+
+        // Pangle
+        maven { url = uri("https://artifact.bytedance.com/repository/pangle") }
+
+        // Tapjoy
+        maven { url = uri("https://sdk.tapjoy.com/") }
+
+        // Chartboost
+        maven { url = uri("https://cboost.jfrog.io/artifactory/chartboost-ads/") }
+
+        // AppNext
+        maven { url = uri("https://dl.appnext.com/") }
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
