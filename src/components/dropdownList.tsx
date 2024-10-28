@@ -1,4 +1,5 @@
-import { StyleProp, ViewStyle } from 'react-native';
+import React from 'react';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AdNetwork from '../common/adNetworkUtils/adNetwork';
 import AdScreensStyle from '../screens/ads/styles/styles';

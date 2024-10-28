@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { AdRequest, AdTheme, BannerAdSize, BannerView, Gender, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
 import LogView from '../../components/logView';
@@ -22,12 +22,12 @@ const getBannerSize = async (maxWidth: string, setAdSize: any, setIsButtonDisabl
                 logger.addLog(`Did fail to get banner size with error: ${error}`, setLogs);
                 setAdSize(undefined);
                 setIsButtonDisabled(false);
-            })
+            });
     } else {
         logger.addLog('Invalid banner size value(s)', setLogs);
         setIsButtonDisabled(false);
     }
-}
+};
 
 const StickyBannerScreen = () => {
     const styles = AdScreensStyle;
@@ -40,16 +40,15 @@ const StickyBannerScreen = () => {
     const [logs, setLogs] = useState<string[]>([]);
     const [selectedAdNetwork, setAdNetwork] = useState<AdNetwork | undefined>(bannerAdNetworks[0]);
 
-    let adRequest = new AdRequest(
-        '20',
-        'context-query',
-        ['context-tag'],
-        Gender.Male,
-        new Location(55.734202, 37.588063),
-        AdTheme.Dark,
-        'bidding-data',
-        new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-    );
+    let adRequest = new AdRequest({
+        age: '20',
+        contextQuery: 'context-query',
+        contextTags: ['context-tag'],
+        gender: Gender.Male,
+        location: new Location(55.734202, 37.588063),
+        adTheme: AdTheme.Light,
+        parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']]),
+    });
 
     return (
         <SafeAreaView style={[styles.verticalContainer, styles.commonView]}>
@@ -62,7 +61,7 @@ const StickyBannerScreen = () => {
                 <TextInput
                     style={[styles.bannerSizeInput, styles.inputLabel]}
                     value={bannerMaxWidthValue}
-                    autoCapitalize='none'
+                    autoCapitalize="none"
                     autoCorrect={false}
                     onChangeText={setBannerMaxWidthValue}
                 />

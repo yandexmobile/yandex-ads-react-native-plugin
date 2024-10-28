@@ -1,4 +1,5 @@
-import { HomeScreen, SettingsScreen, InterstitialScreen, InlineBannerScreen, StickyBannerScreen, RewardedScreen, AppOpenScreen, } from './screens/ads';
+import React from 'react';
+import { HomeScreen, SettingsScreen, InterstitialScreen, InlineBannerScreen, StickyBannerScreen, RewardedScreen, AppOpenScreen } from './screens/ads';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Button } from 'react-native';
@@ -12,6 +13,7 @@ const AppStackNavigator = () => {
     return (
         <AppStack.Navigator
             screenOptions={() => ({
+                // eslint-disable-next-line react/no-unstable-nested-components
                 headerRight: () => (
                     <Button
                         onPress={() => MobileAds.showDebugPanel()}

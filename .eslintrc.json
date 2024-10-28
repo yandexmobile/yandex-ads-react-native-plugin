@@ -1,0 +1,19 @@
+{
+    "root": true,
+    "extends": ["@react-native", "prettier"],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "quoteProps": "consistent",
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "es5",
+                "useTabs": false
+            }
+        ],
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off"
+
+    }
+}

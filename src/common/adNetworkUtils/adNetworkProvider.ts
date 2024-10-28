@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import Network from "./adNetwork";
+import Network from './adNetwork';
 import IosAdNetworkProvider from './iosAdNetworkProvider';
 import AndroidAdAdNetworkProvider from './androidAdNetworkProvider';
 

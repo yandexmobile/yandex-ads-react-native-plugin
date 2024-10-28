@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { AdRequestConfiguration, AdTheme, Gender, InterstitialAd, InterstitialAdLoader, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
 import LogView from '../../components/logView';
@@ -11,18 +11,25 @@ import AdNetworkProvider from '../../common/adNetworkUtils/adNetworkProvider';
 const logger = new Logger();
 
 const loadAd = async (adUnitId: string, setAd: any, setButtonLabel: any, setIsButtonDisabled: any, setLogs: any) => {
-    let loader = await InterstitialAdLoader.create();
-    let adRequestConfiguration = new AdRequestConfiguration(
-        adUnitId,
-        '20',
-        'context-query',
-        ['context-tag'],
-        Gender.Female,
-        new Location(55.734202, 37.588063),
-        AdTheme.Light,
-        'bidding-data',
-        new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-    );
+    let loader = await InterstitialAdLoader.create()
+        .catch((error) => {
+            logger.addLog(`Did fail to create the loader with error: ${error}`, setLogs);
+            setIsButtonDisabled(false);
+            return;
+        });
+    if (!loader) {
+        return;
+    }
+    let adRequestConfiguration = new AdRequestConfiguration({
+        adUnitId: adUnitId,
+        age: '20',
+        contextQuery: 'context-query',
+        contextTags: ['context-tag'],
+        gender: Gender.Female,
+        location: new Location(55.734202, 37.588063),
+        adTheme: AdTheme.Light,
+        parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']]),
+    });
     await loader.loadAd(adRequestConfiguration)
         .then((ad) => {
             logger.addLog('Did load', setLogs);
@@ -36,7 +43,7 @@ const loadAd = async (adUnitId: string, setAd: any, setButtonLabel: any, setIsBu
             setButtonLabel('Load ad');
             setIsButtonDisabled(false);
         });
-}
+};
 
 const showAd = async (ad: InterstitialAd | undefined, setButtonLabel: any, setIsButtonDisabled: any, setLogs: any) => {
     if (ad) {

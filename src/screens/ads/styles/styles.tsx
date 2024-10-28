@@ -43,7 +43,7 @@ const AdScreensStyle = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        borderColor: '#5f9149',
+        borderColor: '#2e8b57',
         width: '20%',
     },
     buttonViewDisabled: {
@@ -58,7 +58,7 @@ const AdScreensStyle = StyleSheet.create({
     },
     buttonLabelEnabled: {
         fontSize: 14,
-        color: '#5f9149',
+        color: '#2e8b57',
     },
     buttonLabelDisabled: {
         fontSize: 14,
@@ -87,7 +87,7 @@ const AdScreensStyle = StyleSheet.create({
     labelWhenReady: {
         fontSize: 16,
         fontWeight: '700',
-        color: '#00BA91',
+        color: '#2e8b57',
     },
     labelWhenlNotReady: {
         fontSize: 16,
