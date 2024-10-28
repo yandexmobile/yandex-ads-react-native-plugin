@@ -35,6 +35,19 @@ npm install yandex-mobile-ads
 
 ## Usage
 
+#### Initializing Yandex Mobile Ads SDK
+
+In the `useEffect` hook in your main component add the call `MobileAds.initialize();`:
+
+```ts
+React.use Effect(() => {
+    (async () => {
+        // Configure the user privacy data policy before init sdk
+        await MobileAds.initialize();
+    })();
+});
+```
+
 #### Integrating an Interstitial Ad
 
 Follow these steps to integrate an Interstitial Ad in your React Native application.
@@ -53,7 +66,14 @@ import { AdRequestConfiguration, AdTheme, Gender, InterstitialAdLoader, Location
 Create an instance of the InterstitialAdLoader:
 
 ```ts
-let loader = await InterstitialAdLoader.create();
+let loader = await InterstitialAdLoader.create()
+    .catch((error) => {
+        // Handle error gracefully
+        return;
+    });
+if (!loader) {
+    return;
+}
 ```
 
 ##### 3. Initialize an ad request configuration
@@ -61,17 +81,16 @@ let loader = await InterstitialAdLoader.create();
 Create an instance of the AdRequestConfiguration:
 
 ```ts
-let adRequestConfiguration = new AdRequestConfiguration(
-    'demo-interstitial-yandex',
-    '20',
-    'context-query',
-    ['context-tag'],
-    Gender.Female,
-    new Location(55.734202, 37.588063),
-    AdTheme.Light,
-    'bidding-data',
-    new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-);
+let adRequestConfiguration = new AdRequestConfiguration({
+    adUnitId: 'demo-interstitial-yandex',
+    age: '20',
+    contextQuery: 'context-query',
+    contextTags: ['context-tag'],
+    gender: Gender.Female,
+    location: new Location(55.734202, 37.588063),
+    adTheme: AdTheme.Light,
+    parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
+});
 ```
 
 ##### 4. Load an ad
@@ -135,7 +154,14 @@ import { AdRequestConfiguration, AdTheme, Gender, Location, RewardedAdLoader } f
 Create an instance of the RewardedAdLoader:
 
 ```ts
-let loader = await RewardedAdLoader.create();
+let loader = await RewardedAdLoader.create()
+    .catch((error) => {
+        // Handle error gracefully
+        return;
+    });
+if (!loader) {
+    return;
+}
 ```
 
 ##### 3. Initialize an ad request configuration
@@ -143,17 +169,16 @@ let loader = await RewardedAdLoader.create();
 Create an instance of the AdRequestConfiguration:
 
 ```ts
-let adRequestConfiguration = new AdRequestConfiguration(
-    'demo-rewarded-yandex',
-    '20',
-    'context-query',
-    ['context-tag'],
-    Gender.Male,
-    new Location(55.734202, 37.588063),
-    AdTheme.Dark,
-    'bidding-data',
-    new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-);
+let adRequestConfiguration = new AdRequestConfiguration({
+    adUnitId: 'demo-rewarded-yandex',
+    age: '20',
+    contextQuery: 'context-query',
+    contextTags: ['context-tag'],
+    gender: Gender.Male,
+    location: new Location(55.734202, 37.588063),
+    adTheme: AdTheme.Light,
+    parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
+});
 ```
 
 ##### 4. Load an ad
@@ -194,7 +219,7 @@ if (ad) {
         console.log(`Did track impression: ${JSON.stringify(impressionData)}`);
     };
     ad.onRewarded = (reward) => {
-        console.log(`Did reward: ${JSON.stringify(reward)}`, setLogs);
+        console.log(`Did reward: ${JSON.stringify(reward)}`);
     }
     ad.show();
 }
@@ -220,7 +245,14 @@ import { AdRequestConfiguration, AdTheme, AppOpenAdLoader, Gender, Location } fr
 Create an instance of the RewardedAdLoader:
 
 ```ts
-let loader = await AppOpenAdLoader.create();
+let loader = await AppOpenAdLoader.create()
+    .catch((error) => {
+        // Handle error gracefully
+        return;
+    });
+if (!loader) {
+    return;
+}
 ```
 
 ##### 3. Initialize an ad request configuration
@@ -228,17 +260,16 @@ let loader = await AppOpenAdLoader.create();
 Create an instance of the AdRequestConfiguration:
 
 ```ts
-let adRequestConfiguration = new AdRequestConfiguration(
-    'demo-rewarded-yandex',
-    '20',
-    'context-query',
-    ['context-tag'],
-    Gender.Male,
-    new Location(55.734202, 37.588063),
-    AdTheme.Dark,
-    'bidding-data',
-    new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-);
+let adRequestConfiguration = new AdRequestConfiguration({
+    adUnitId: 'demo-appopenad-yandex',
+    age: '20',
+    contextQuery: 'context-query',
+    contextTags: ['context-tag'],
+    gender: Gender.Female,
+    location: new Location(55.734202, 37.588063),
+    adTheme: AdTheme.Light,
+    parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
+});
 ```
 
 ##### 4. Load an ad
@@ -319,16 +350,15 @@ let adSize = await BannerAdSize.inlineSize(Dimensions.get('window').width, 250);
 Create an instance of the AdRequest:
 
 ```ts
-let adRequest = new AdRequest(
-    '20',
-    'context-query',
-    ['context-tag'],
-    Gender.Male,
-    new Location(55.734202, 37.588063),
-    AdTheme.Dark,
-    'bidding-data',
-    new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-);
+let adRequest = new AdRequest({
+    age: '20',
+    contextQuery: 'context-query',
+    contextTags: ['context-tag'],
+    gender: Gender.Male,
+    location: new Location(55.734202, 37.588063),
+    adTheme: AdTheme.Dark,
+    parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
+});
 ```
 
 ##### 4. Render an Inline Banner Ad
@@ -383,16 +413,15 @@ let adSize = await BannerAdSize.stickySize(Dimensions.get('window').width); // y
 Create an instance of the AdRequest:
 
 ```ts
-let adRequest = new AdRequest(
-    '20',
-    'context-query',
-    ['context-tag'],
-    Gender.Male,
-    new Location(55.734202, 37.588063),
-    AdTheme.Dark,
-    'bidding-data',
-    new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-);
+let adRequest = new AdRequest({
+    age: '20',
+    contextQuery: 'context-query',
+    contextTags: ['context-tag'],
+    gender: Gender.Male,
+    location: new Location(55.734202, 37.588063),
+    adTheme: AdTheme.Dark,
+    parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
+});
 ```
 
 ##### 4. Render an Inline Banner Ad
@@ -422,36 +451,53 @@ Use the BannerView component to display a banner ad in your application. Set up 
 
 #### Android
 
+You can use common mediation dependency including all adapters (recommended):
+
 In ```android/app/build.gradle```:
 
-You can choose adapters manually and include their dependencies:
-
-```kt
+```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.ads.mediation:mobileads-adcolony:4.8.0.14'
-    implementation 'com.yandex.ads.mediation:mobileads-applovin:12.6.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.9'
-    implementation 'com.yandex.ads.mediation:mobileads-google:23.0.0.4'
-    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.7.5.0'
-    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.2.1.1'
-    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.1.0.9.0'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.1'
-    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:13.4.1.4'
-    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.1.0.5'
-    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.12.2.0'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.22.1.0'
+    implementation 'com.yandex.android:mobileads-mediation:7.6.0.0'
 }
 ```
 
-If you plan to use AdMob, you need to add your AdMob ID to the AndroidManifest.xml file using a <meta-data> tag with com.google.android.gms.ads.APPLICATION_ID:
+Or you can choose adapters manually and include only their dependencies:
 
-```kt
+```groovy
+dependencies {
+    // ...
+    implementation 'com.yandex.ads.mediation:mobileads-applovin:12.6.0.3'
+    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.3'
+    // for Interstitial and Rewarded ads
+    implementation 'com.appnext.sdk:ads:2.7.6.473'
+    // For Banners ads
+    implementation 'com.appnext.sdk:banners:2.7.6.473'
+    implementation 'com.yandex.ads.mediation:mobileads-bigoads:5.0.1.0'
+    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.11'
+    implementation 'com.yandex.ads.mediation:mobileads-google:23.4.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.7.8.0'
+    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.4.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-mintegral:16.8.61.0'
+    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.2.0.7.0'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.3'
+    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:13.4.1.6'
+    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.4.1.0'
+    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.12.3.0'
+    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.22.1.2'
+}
+```
+
+If you plan to use AdMob, you need to add your AdMob ID to the AndroidManifest.xml file using a ```<meta-data>``` tag with ```com.google.android.gms.ads.APPLICATION_ID```:
+
+```xml
 <manifest>
     <application>
+        ...
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
+        ...
     </application>
 </manifest>
 ```
@@ -460,52 +506,63 @@ Some adapters also require adding specific maven urls:
 
 In ```android/build.gradle```:
 
-```kt
+```groovy
 allprojects {
     repositories {
         // ...
         // IronSource
-        maven { url = uri("https://android-sdk.is.com/") }
+        maven { url 'https://android-sdk.is.com/' }
         // Pangle
-        maven { url = uri("https://artifact.bytedance.com/repository/pangle") }
+        maven { url 'https://artifact.bytedance.com/repository/pangle' }
         // Tapjoy
-        maven { url = uri("https://sdk.tapjoy.com/") }
+        maven { url 'https://sdk.tapjoy.com/' }
+        // Mintegral
+        maven { url 'https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea' }
         // Chartboost
-        maven { url = uri("https://cboost.jfrog.io/artifactory/chartboost-ads/") }
+        maven { url 'https://cboost.jfrog.io/artifactory/chartboost-ads/' }
         // AppNext
-        maven { url = uri("https://dl.appnext.com/") }
+        maven { url 'https://dl.appnext.com/' }
     }
 }
 ```
 
 #### iOS
 
-You can choose adapters manually and include their dependencies:
+You can use common mediation dependency including all adapters (recommended):
 
 In ```ios/Podfile```:
 
-```swift
-pod 'AdColonyYandexMobileAdsAdapters', '4.9.0.20'
-pod 'AppLovinYandexMobileAdsAdapters', '12.6.0.0'
-pod 'ChartboostYandexMobileAdsAdapters', '9.7.0.9'
-pod 'GoogleYandexMobileAdsAdapters', '11.7.0.0'
-pod 'InMobiYandexMobileAdsAdapters', '10.7.4.4'
-pod 'IronSourceYandexMobileAdsAdapters', '8.2.0.3'
-pod 'StartAppYandexMobileAdsAdapters', '4.10.4.0'
-pod 'VungleYandexMobileAdsAdapters', '7.4.0.4'
-pod 'UnityAdsYandexMobileAdsAdapters', '4.12.2.0'
-pod 'MyTargetYandexMobileAdsAdapters', '5.21.6.0'
+```ruby
+pod 'YandexMobileAdsMediation', '7.6.0'
+```
+
+You can choose adapters manually and include their dependencies:
+
+```ruby
+pod 'AppLovinYandexMobileAdsAdapters', '12.6.1.3'
+pod 'BigoADSYandexMobileAdsAdapters', '4.2.3.10'
+pod 'ChartboostYandexMobileAdsAdapters', '9.7.0.13'
+pod 'GoogleYandexMobileAdsAdapters', '11.10.0.0'
+pod 'InMobiYandexMobileAdsAdapters', '10.7.8.0'
+pod 'IronSourceYandexMobileAdsAdapters', '8.4.0.0'
+pod 'MintegralYandexMobileAdsAdapters', '7.7.3.0'
+pod 'StartAppYandexMobileAdsAdapters', '4.10.4.4'
+pod 'VungleYandexMobileAdsAdapters', '7.4.1.2'
+pod 'UnityAdsYandexMobileAdsAdapters', '4.12.3.0'
+pod 'MyTargetYandexMobileAdsAdapters', '5.21.7.3'
 ```
 
 If you plan to use AdMob, add the GADApplicationIdentifier key with your AdMob ID to your app's Info.plist file.
+
 In ```ios/Info.plist```:
 
-```swift
+```xml
 <key>GADApplicationIdentifier</key>
 <string>ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy</string>
 ```
 
 Networks also require adding specific SKAdNetworkIdentifiers to SKAdNetworkItems.
+
 In ```ios/Info.plist```:
 
 <details>
@@ -525,12 +582,12 @@ In ```ios/Info.plist```:
         <string>cstr6suwn9.skadnetwork</string>
     </dict>
     <dict>
-        <!-- VK Реклама (ex. myTarget) -->
+        <!-- VK Ads (ex. myTarget) -->
         <key>SKAdNetworkIdentifier</key>
         <string>n9x2a789qt.skadnetwork</string>
     </dict>
     <dict>
-        <!-- VK Реклама (ex. myTarget) -->
+        <!-- VK Ads (ex. myTarget) -->
         <key>SKAdNetworkIdentifier</key>
         <string>r26jy69rpl.skadnetwork</string>
     </dict>

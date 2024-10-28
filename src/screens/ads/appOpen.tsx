@@ -1,5 +1,5 @@
-import { Text, TouchableOpacity, View, AppState, SafeAreaView } from 'react-native';
-import { useState } from 'react';
+import { Text, TouchableOpacity, View, AppState, SafeAreaView, type NativeEventSubscription } from 'react-native';
+import React, { useCallback, useState } from 'react';
 import { AdRequestConfiguration, AdTheme, AppOpenAdLoader, AppOpenAd, Gender, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
 import LogView from '../../components/logView';
@@ -7,22 +7,31 @@ import Logger from '../../common/logger';
 import DropdownList from '../../components/dropdownList';
 import AdNetwork from '../../common/adNetworkUtils/adNetwork';
 import AdNetworkProvider from '../../common/adNetworkUtils/adNetworkProvider';
+import { useFocusEffect } from '@react-navigation/native';
 
 const logger = new Logger();
+let subscription: NativeEventSubscription | null = null;
 
 const loadAd = async (adUnitId: string, updateAdStatus: any, setIsButtonDisabled: any, setLogs: any) => {
-    let loader = await AppOpenAdLoader.create();
-    let adRequestConfiguration = new AdRequestConfiguration(
-        adUnitId,
-        '20',
-        'context-query',
-        ['context-tag'],
-        Gender.Female,
-        new Location(55.734202, 37.588063),
-        AdTheme.Light,
-        'bidding-data',
-        new Map<string, string>([['param1', 'value1'], ['param2', 'value2']])
-    );
+    let loader = await AppOpenAdLoader.create()
+        .catch((error) => {
+            logger.addLog(`Did fail to create the loader with error: ${error}`, setLogs);
+            setIsButtonDisabled(false);
+            return;
+        });
+    if (!loader) {
+        return;
+    }
+    let adRequestConfiguration = new AdRequestConfiguration({
+        adUnitId: adUnitId,
+        age: '20',
+        contextQuery: 'context-query',
+        contextTags: ['context-tag'],
+        gender: Gender.Female,
+        location: new Location(55.734202, 37.588063),
+        adTheme: AdTheme.Light,
+        parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']]),
+    });
     await loader.loadAd(adRequestConfiguration)
         .then((ad) => {
             logger.addLog('Did load', setLogs);
@@ -33,7 +42,7 @@ const loadAd = async (adUnitId: string, updateAdStatus: any, setIsButtonDisabled
             logger.addLog(`Did fail to load with error: ${error}`, setLogs);
             setIsButtonDisabled(false);
         });
-}
+};
 
 const prepareToShowAd = async (ad: AppOpenAd | undefined, updateAdStatus: any, setIsButtonDisabled: any, setLogs: any) => {
     if (ad) {
@@ -56,21 +65,22 @@ const prepareToShowAd = async (ad: AppOpenAd | undefined, updateAdStatus: any, s
         const handleAppStateChange = (nextAppState: string) => {
             if (nextAppState === 'active') {
                 ad.show();
-                subscription.remove();
-                updateAdStatus("Ad is not ready to be presented", false);
+                subscription?.remove();
+                subscription = null;
+                updateAdStatus('Ad is not ready to be presented', false);
                 setIsButtonDisabled(false);
             }
         };
 
-        const subscription = AppState.addEventListener('change', handleAppStateChange);
+        subscription = AppState.addEventListener('change', handleAppStateChange);
     }
-}
+};
 
-const AppOpenScreen = () => {
+const AppOpenScreen = ({ }: { navigation: any }) => {
     const styles = AdScreensStyle;
     const appOpenAdNetworks = AdNetworkProvider.instance.appOpenAdNetworks;
 
-    const [adStatusLabel, setAdStatusLabel] = useState("Ad is not ready to be presented");
+    const [adStatusLabel, setAdStatusLabel] = useState('Ad is not ready to be presented');
     const [isAdReady, setIsAdReady] = useState(false);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [logs, setLogs] = useState<string[]>([]);
@@ -80,6 +90,15 @@ const AppOpenScreen = () => {
         setAdStatusLabel(status);
         setIsAdReady(ready);
     };
+
+    useFocusEffect(
+        useCallback(() => {
+            return () => {
+                subscription?.remove();
+                subscription = null;
+            };
+        }, [])
+    );
 
     return (
         <SafeAreaView style={[styles.verticalContainer, styles.commonView]}>

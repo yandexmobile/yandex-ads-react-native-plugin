@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { FlatList, SafeAreaView, Switch, Text, View } from "react-native";
-import { MobileAds } from "yandex-mobile-ads";
-import AdScreensStyle from "./ads/styles/styles";
+import React, { useEffect, useState } from 'react';
+import { FlatList, SafeAreaView, Switch, Text, View } from 'react-native';
+import { MobileAds } from 'yandex-mobile-ads';
+import AdScreensStyle from './ads/styles/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 enum SettingsType {
@@ -91,7 +91,7 @@ const SettingsScreen = () => {
             <View style={styles.settingsList}>
                 <Text style={styles.settingLabel}>{item.type}</Text>
                 <Switch
-                    trackColor={{ false: '#767577', true: '#81b0ff' }}
+                    trackColor={{ false: '#767577', true: '#61dafb' }}
                     thumbColor={item.isEnabled ? '#f4f3f4' : '#f4f3f4'}
                     onValueChange={() => toggleSwitch(item.id)}
                     value={item.isEnabled}

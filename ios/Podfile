@@ -17,16 +17,7 @@ end
 target 'YandexMobileAdsSample' do
   config = use_native_modules!
 
-  pod 'AdColonyYandexMobileAdsAdapters', '4.9.0.20'
-  pod 'AppLovinYandexMobileAdsAdapters', '12.6.0.0'
-  pod 'ChartboostYandexMobileAdsAdapters', '9.7.0.9'
-  pod 'GoogleYandexMobileAdsAdapters', '11.7.0.0'
-  pod 'InMobiYandexMobileAdsAdapters', '10.7.4.4'
-  pod 'IronSourceYandexMobileAdsAdapters', '8.2.0.3'
-  pod 'StartAppYandexMobileAdsAdapters', '4.10.4.0'
-  pod 'VungleYandexMobileAdsAdapters', '7.4.0.4'
-  pod 'UnityAdsYandexMobileAdsAdapters', '4.12.2.0'
-  pod 'MyTargetYandexMobileAdsAdapters', '5.21.6.0'
+  pod 'YandexMobileAdsMediation', '7.6.0'
 
   use_react_native!(
     :path => config[:reactNativePath],
