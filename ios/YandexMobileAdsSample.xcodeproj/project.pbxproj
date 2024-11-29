@@ -12,8 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8894C927137373DA2E330585 /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04C01D3E71EE6B810FB0340 /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */; };
-		9C46AB484A743B6FF8D9C2FC /* libPods-YandexMobileAdsSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E9D3EE8327A77A7954681F /* libPods-YandexMobileAdsSample.a */; };
+		AF43AB57FF554125F3BF9C88 /* libPods-YandexMobileAdsSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA5167EAC7FE346A20ED42E /* libPods-YandexMobileAdsSample.a */; };
+		BDB184913C54D5F6E195E32B /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E38E6A6499D4FBE4EFD9AF8E /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */; };
 		C5643455618EEFA83CB12697 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DDB6A25692729F5F4656A3F3 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +31,7 @@
 		00E356EE1AD99517003FC87E /* YandexMobileAdsSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMobileAdsSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* YandexMobileAdsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YandexMobileAdsSampleTests.m; sourceTree = "<group>"; };
+		02016481DC49ACADA561A5CF /* Pods-YandexMobileAdsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* YandexMobileAdsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YandexMobileAdsSample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = YandexMobileAdsSample/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,15 +39,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YandexMobileAdsSample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YandexMobileAdsSample/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = YandexMobileAdsSample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		17E4306279499362D107B6C7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		4AA6F4FBAAD4B47376427201 /* Pods-YandexMobileAdsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample.debug.xcconfig"; sourceTree = "<group>"; };
-		4F003916C0CFA71BAD40DCD7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7FF75AC92FF5771CFCD90985 /* Pods-YandexMobileAdsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample.release.xcconfig"; sourceTree = "<group>"; };
+		40D48C6234849828FE718AAD /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = YandexMobileAdsSample/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C2E9D3EE8327A77A7954681F /* libPods-YandexMobileAdsSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE13042BA8221BAE68AE0FE2 /* Pods-YandexMobileAdsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample.release.xcconfig"; sourceTree = "<group>"; };
+		AFA5167EAC7FE346A20ED42E /* libPods-YandexMobileAdsSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB6A25692729F5F4656A3F3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = YandexMobileAdsSample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E38E6A6499D4FBE4EFD9AF8E /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F04C01D3E71EE6B810FB0340 /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5FEBAA1A25E21CDD98BF8FA /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8894C927137373DA2E330585 /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a in Frameworks */,
+				BDB184913C54D5F6E195E32B /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C46AB484A743B6FF8D9C2FC /* libPods-YandexMobileAdsSample.a in Frameworks */,
+				AF43AB57FF554125F3BF9C88 /* libPods-YandexMobileAdsSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				C2E9D3EE8327A77A7954681F /* libPods-YandexMobileAdsSample.a */,
-				F04C01D3E71EE6B810FB0340 /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */,
+				AFA5167EAC7FE346A20ED42E /* libPods-YandexMobileAdsSample.a */,
+				E38E6A6499D4FBE4EFD9AF8E /* libPods-YandexMobileAdsSample-YandexMobileAdsSampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,10 +145,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4AA6F4FBAAD4B47376427201 /* Pods-YandexMobileAdsSample.debug.xcconfig */,
-				7FF75AC92FF5771CFCD90985 /* Pods-YandexMobileAdsSample.release.xcconfig */,
-				4F003916C0CFA71BAD40DCD7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */,
-				17E4306279499362D107B6C7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */,
+				02016481DC49ACADA561A5CF /* Pods-YandexMobileAdsSample.debug.xcconfig */,
+				AE13042BA8221BAE68AE0FE2 /* Pods-YandexMobileAdsSample.release.xcconfig */,
+				40D48C6234849828FE718AAD /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */,
+				F5FEBAA1A25E21CDD98BF8FA /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -160,12 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "YandexMobileAdsSampleTests" */;
 			buildPhases = (
-				41FA81B09B5C1A1CE8FB3DC7 /* [CP] Check Pods Manifest.lock */,
+				66A3739729480701A363EEEB /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				AE12C17FAD05A7ACCE917C0D /* [CP] Embed Pods Frameworks */,
-				3384A933725CB7BBA2A59DB0 /* [CP] Copy Pods Resources */,
+				148919C2C7693D0B5EBCE493 /* [CP] Embed Pods Frameworks */,
+				789E152F7C8F36E26D8DD939 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,13 +181,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "YandexMobileAdsSample" */;
 			buildPhases = (
-				878D5C5D3BCB246B27694BC6 /* [CP] Check Pods Manifest.lock */,
+				CB2B1CE80E7414CCC44E21B2 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				48E5458B3EF9D8875AE6E67F /* [CP] Embed Pods Frameworks */,
-				04E41073FADF59AD79BD3C45 /* [CP] Copy Pods Resources */,
+				145239E8D3762BC86A38C7F5 /* [CP] Embed Pods Frameworks */,
+				D9B3F365080AD5366B0BA197 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,41 +271,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		04E41073FADF59AD79BD3C45 /* [CP] Copy Pods Resources */ = {
+		145239E8D3762BC86A38C7F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3384A933725CB7BBA2A59DB0 /* [CP] Copy Pods Resources */ = {
+		148919C2C7693D0B5EBCE493 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41FA81B09B5C1A1CE8FB3DC7 /* [CP] Check Pods Manifest.lock */ = {
+		66A3739729480701A363EEEB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,24 +327,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		48E5458B3EF9D8875AE6E67F /* [CP] Embed Pods Frameworks */ = {
+		789E152F7C8F36E26D8DD939 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		878D5C5D3BCB246B27694BC6 /* [CP] Check Pods Manifest.lock */ = {
+		CB2B1CE80E7414CCC44E21B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,21 +366,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE12C17FAD05A7ACCE917C0D /* [CP] Embed Pods Frameworks */ = {
+		D9B3F365080AD5366B0BA197 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests/Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsSample/Pods-YandexMobileAdsSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -416,7 +416,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F003916C0CFA71BAD40DCD7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */;
+			baseConfigurationReference = 40D48C6234849828FE718AAD /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -443,7 +443,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17E4306279499362D107B6C7 /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */;
+			baseConfigurationReference = F5FEBAA1A25E21CDD98BF8FA /* Pods-YandexMobileAdsSample-YandexMobileAdsSampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -467,7 +467,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AA6F4FBAAD4B47376427201 /* Pods-YandexMobileAdsSample.debug.xcconfig */;
+			baseConfigurationReference = 02016481DC49ACADA561A5CF /* Pods-YandexMobileAdsSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -494,7 +494,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FF75AC92FF5771CFCD90985 /* Pods-YandexMobileAdsSample.release.xcconfig */;
+			baseConfigurationReference = AE13042BA8221BAE68AE0FE2 /* Pods-YandexMobileAdsSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
