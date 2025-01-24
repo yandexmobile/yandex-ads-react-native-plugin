@@ -458,7 +458,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:7.8.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:7.9.0.0'
 }
 ```
 
@@ -467,24 +467,24 @@ Or you can choose adapters manually and include only their dependencies:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.ads.mediation:mobileads-applovin:12.6.0.5'
-    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.5'
+    implementation 'com.yandex.ads.mediation:mobileads-applovin:12.6.0.6'
+    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.6'
     // for Interstitial and Rewarded ads
     implementation 'com.appnext.sdk:ads:2.7.6.473'
     // For Banners ads
     implementation 'com.appnext.sdk:banners:2.7.6.473'
-    implementation 'com.yandex.ads.mediation:mobileads-bigoads:5.0.2.0'
-    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.13'
-    implementation 'com.yandex.ads.mediation:mobileads-google:23.5.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.8.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.5.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-mintegral:16.8.61.2'
-    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.4.0.2.0'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.5'
-    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:13.4.1.8'
-    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.4.2.0'
-    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.12.5.0'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.22.1.4'
+    implementation 'com.yandex.ads.mediation:mobileads-bigoads:5.0.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.14'
+    implementation 'com.yandex.ads.mediation:mobileads-google:23.5.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.8.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.5.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-mintegral:16.8.61.3'
+    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.4.0.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.6'
+    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:13.4.1.9'
+    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.4.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.12.5.1'
+    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.22.1.5'
 }
 ```
 
@@ -539,17 +539,17 @@ pod 'YandexMobileAdsMediation', '7.7.0'
 You can choose adapters manually and include their dependencies:
 
 ```ruby
-pod 'AppLovinYandexMobileAdsAdapters', '13.0.1.0'
-pod 'BigoADSYandexMobileAdsAdapters', '4.5.1.0'
-pod 'ChartboostYandexMobileAdsAdapters', '9.8.0.1'
-pod 'GoogleYandexMobileAdsAdapters', '11.12.0.0'
-pod 'InMobiYandexMobileAdsAdapters', '10.7.8.3'
-pod 'IronSourceYandexMobileAdsAdapters', '8.5.0.0'
-pod 'MintegralYandexMobileAdsAdapters', '7.7.3.3'
-pod 'StartAppYandexMobileAdsAdapters', '4.10.4.7'
-pod 'VungleYandexMobileAdsAdapters', '7.4.2.0'
-pod 'UnityAdsYandexMobileAdsAdapters', '4.12.4.0'
-pod 'MyTargetYandexMobileAdsAdapters', '5.22.0.0'
+pod 'AppLovinYandexMobileAdsAdapters', '13.0.1.1'
+pod 'BigoADSYandexMobileAdsAdapters', '4.6.0.0'
+pod 'ChartboostYandexMobileAdsAdapters', '9.8.0.2'
+pod 'GoogleYandexMobileAdsAdapters', '11.12.0.1'
+pod 'InMobiYandexMobileAdsAdapters', '10.7.8.4'
+pod 'IronSourceYandexMobileAdsAdapters', '8.5.0.1'
+pod 'MintegralYandexMobileAdsAdapters', '7.7.3.4'
+pod 'StartAppYandexMobileAdsAdapters', '4.10.4.8'
+pod 'VungleYandexMobileAdsAdapters', '7.4.2.1'
+pod 'UnityAdsYandexMobileAdsAdapters', '4.12.4.1'
+pod 'MyTargetYandexMobileAdsAdapters', '5.22.0.1'
 ```
 
 If you plan to use AdMob, add the GADApplicationIdentifier key with your AdMob ID to your app's Info.plist file.
