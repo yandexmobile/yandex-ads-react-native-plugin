@@ -458,7 +458,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:7.10.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:7.10.1.0'
 }
 ```
 
@@ -539,17 +539,17 @@ pod 'YandexMobileAdsMediation', '7.7.0'
 You can choose adapters manually and include their dependencies:
 
 ```ruby
-pod 'AppLovinYandexMobileAdsAdapters', '13.0.1.2'
-pod 'BigoADSYandexMobileAdsAdapters', '4.6.0.1'
-pod 'ChartboostYandexMobileAdsAdapters', '9.8.0.3'
-pod 'GoogleYandexMobileAdsAdapters', '11.12.0.2'
-pod 'InMobiYandexMobileAdsAdapters', '10.7.8.5'
-pod 'IronSourceYandexMobileAdsAdapters', '8.5.0.2'
-pod 'MintegralYandexMobileAdsAdapters', '7.7.3.5'
-pod 'StartAppYandexMobileAdsAdapters', '4.10.4.9'
-pod 'VungleYandexMobileAdsAdapters', '7.4.2.2'
-pod 'UnityAdsYandexMobileAdsAdapters', '4.12.4.2'
-pod 'MyTargetYandexMobileAdsAdapters', '5.22.0.2'
+pod 'AppLovinYandexMobileAdsAdapters', '13.0.1.3'
+pod 'BigoADSYandexMobileAdsAdapters', '4.6.0.2'
+pod 'ChartboostYandexMobileAdsAdapters', '9.8.0.4'
+pod 'GoogleYandexMobileAdsAdapters', '11.12.0.3'
+pod 'InMobiYandexMobileAdsAdapters', '10.7.8.6'
+pod 'IronSourceYandexMobileAdsAdapters', '8.5.0.3'
+pod 'MintegralYandexMobileAdsAdapters', '7.7.3.6'
+pod 'StartAppYandexMobileAdsAdapters', '4.10.4.10'
+pod 'VungleYandexMobileAdsAdapters', '7.4.2.3'
+pod 'UnityAdsYandexMobileAdsAdapters', '4.12.4.3'
+pod 'MyTargetYandexMobileAdsAdapters', '5.22.0.3'
 ```
 
 If you plan to use AdMob, add the GADApplicationIdentifier key with your AdMob ID to your app's Info.plist file.
