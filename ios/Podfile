@@ -17,7 +17,7 @@ end
 target 'YandexMobileAdsSample' do
   config = use_native_modules!
 
-  pod 'YandexMobileAdsMediation', '7.10.0'
+  pod 'YandexMobileAdsMediation', '7.10.1'
 
   use_react_native!(
     :path => config[:reactNativePath],
