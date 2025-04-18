@@ -86,16 +86,16 @@ PODS:
   - DigitalTurbineYandexMobileAdsAdapters (8.3.2.0):
     - Fyber_Marketplace_SDK (~> 8.3.2)
     - YandexMobileAds (~> 7.12.0)
-  - DivKit (31.8.0):
-    - DivKit_LayoutKit (= 31.8.0)
-    - DivKit_Serialization (= 31.8.0)
+  - DivKit (31.11.0):
+    - DivKit_LayoutKit (= 31.11.0)
+    - DivKit_Serialization (= 31.11.0)
     - VGSL (~> 6.22)
-  - DivKit_LayoutKit (31.8.0):
-    - DivKit_LayoutKitInterface (= 31.8.0)
+  - DivKit_LayoutKit (31.11.0):
+    - DivKit_LayoutKitInterface (= 31.11.0)
     - VGSL (~> 6.22)
-  - DivKit_LayoutKitInterface (31.8.0):
+  - DivKit_LayoutKitInterface (31.11.0):
     - VGSL (~> 6.22)
-  - DivKit_Serialization (31.8.0):
+  - DivKit_Serialization (31.11.0):
     - VGSL (~> 6.22)
   - DivKitBinaryCompatibilityFacade (4.6.1):
     - DivKit (~> 31.4)
@@ -1708,7 +1708,7 @@ PODS:
   - VungleYandexMobileAdsAdapters (7.4.2.5):
     - VungleAds (~> 7.4.2)
     - YandexMobileAds (~> 7.12.0)
-  - yandex-mobile-ads (7.12.0):
+  - yandex-mobile-ads (7.12.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1728,9 +1728,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - YandexMobileAds (= 7.12.0)
+    - YandexMobileAds (= 7.12.1)
     - Yoga
-  - YandexMobileAds (7.12.0):
+  - YandexMobileAds (7.12.1):
     - AppMetricaCore (< 6.0.0, >= 5.8.0)
     - AppMetricaCrashes (< 6.0.0, >= 5.8.0)
     - AppMetricaLibraryAdapter (< 6.0.0, >= 5.8.0)
@@ -2052,10 +2052,10 @@ SPEC CHECKSUMS:
   ChartboostSDK: 5d387aeccf2748cd71c0b033e6c2cad4a558b308
   ChartboostYandexMobileAdsAdapters: beb881dc7eea40b11d616ecc7f3ec6ab34549a39
   DigitalTurbineYandexMobileAdsAdapters: a611dc6202e541ee9f690b505d68dd294251fd68
-  DivKit: 71a3bbb3fbfa7c5dba96ddffcc72784fe369f1f8
-  DivKit_LayoutKit: 39a3d759c308c58b1c70da1f2e8e7a36946b11a7
-  DivKit_LayoutKitInterface: eaa754ae53d816dd23ed1564b1200b560e399dca
-  DivKit_Serialization: 822dfcd93a2b0edb300dbcc1d41667dec1a33e46
+  DivKit: 8c8637038a7303a7a006c32ef87f248e50d234be
+  DivKit_LayoutKit: e2cfb72ffbc53c9ca080d2a2ad70e1eb6977a8c4
+  DivKit_LayoutKitInterface: ffbab1f47c62a018f642f50678fef718929e7e7f
+  DivKit_Serialization: 80567942f57d8b7e41a7fb23077339771a2e223b
   DivKitBinaryCompatibilityFacade: 99f7ce6693fe3705c8ccb8c6d8c27aae0637b5ec
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 7b438dceb9f904bd85ca3c31d64cce32a035472b
@@ -2144,8 +2144,8 @@ SPEC CHECKSUMS:
   VGSLUI: 3e1966b09a48dd4bd874fee3b29948e8a5c449ee
   VungleAds: 1da221690dd1a8710d0b6a4c7aeac14cb12d31ab
   VungleYandexMobileAdsAdapters: 8173eea04e0603463a50762079aece5ee44e0ada
-  yandex-mobile-ads: 84625219fcac739c96fa0eaa2b4274fefd93a351
-  YandexMobileAds: 314a94fe13300a8a6b3adc881bc372a092b2d2ab
+  yandex-mobile-ads: f7a25c00990d6a302446d56162ca8b9433f0de3e
+  YandexMobileAds: 5555d134390d7009f7a2b1b69f2a8deb656c8fe3
   YandexMobileAdsMediation: d09da2bee6d3ef73ee6f1e446a675c50daa73405
   Yoga: 4ef80d96a5534f0e01b3055f17d1e19a9fc61b63
   zMaticoo: 55c4c7fef4c4f8f8aedca9acd892e32a68ed45e3
