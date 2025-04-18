@@ -458,7 +458,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:7.12.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:7.12.1.0'
 }
 ```
 
