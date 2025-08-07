@@ -37,6 +37,9 @@ allprojects {
 
         // AppNext
         maven { url "https://dl.appnext.com/" }
+
+        // PetalAds
+        maven { url "https://developer.huawei.com/repo/" }
     }
 }
 
