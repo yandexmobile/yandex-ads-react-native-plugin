@@ -89,16 +89,16 @@ PODS:
   - DigitalTurbineYandexMobileAdsAdapters (8.3.2.6):
     - Fyber_Marketplace_SDK (~> 8.3.8)
     - YandexMobileAds (~> 7.16.0)
-  - DivKit (32.17.0):
-    - DivKit_LayoutKit (= 32.17.0)
-    - DivKit_Serialization (= 32.17.0)
+  - DivKit (32.18.0):
+    - DivKit_LayoutKit (= 32.18.0)
+    - DivKit_Serialization (= 32.18.0)
     - VGSL (~> 7.7)
-  - DivKit_LayoutKit (32.17.0):
-    - DivKit_LayoutKitInterface (= 32.17.0)
+  - DivKit_LayoutKit (32.18.0):
+    - DivKit_LayoutKitInterface (= 32.18.0)
     - VGSL (~> 7.7)
-  - DivKit_LayoutKitInterface (32.17.0):
+  - DivKit_LayoutKitInterface (32.18.0):
     - VGSL (~> 7.7)
-  - DivKit_Serialization (32.17.0):
+  - DivKit_Serialization (32.18.0):
     - VGSL (~> 7.7)
   - DivKitBinaryCompatibilityFacade (5.1.1):
     - DivKit (~> 32.9)
@@ -1576,10 +1576,10 @@ SPEC CHECKSUMS:
   ChartboostSDK: 9298ec2ea9ae6c5881877f87ca6bc3f68449fe0f
   ChartboostYandexMobileAdsAdapters: 81cf070db0940b63cb545e889a46305634f5ab3c
   DigitalTurbineYandexMobileAdsAdapters: 2ec0474d3d9108df7c6276a40383f87fa131edf2
-  DivKit: 29a4b2481ad392009765d0ab101c771ddd6e3ea0
-  DivKit_LayoutKit: 007971524c718a4686d0690365b11692cffb3b5b
-  DivKit_LayoutKitInterface: e2615c9526fdeaeaa172c9c94edabdd0a22c4218
-  DivKit_Serialization: fa03e0a08b57a557a4ebe7c781d3711d70dc0a8c
+  DivKit: 4c76209485a7e0daec98a66d8b06945830356712
+  DivKit_LayoutKit: 321e12df3eb85001783b43b1128d19d1c15fd8ad
+  DivKit_LayoutKitInterface: 10627b63def98db848c1a1871043b023b436ae92
+  DivKit_Serialization: 298dddefb6bc3d929ec118a43c98b380680516c8
   DivKitBinaryCompatibilityFacade: 8103b21401698fb470302328f70b16ab26c4cd49
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
   FBAudienceNetwork: 08e86d63a05b3a5a59414af12e4af8d756943c80
