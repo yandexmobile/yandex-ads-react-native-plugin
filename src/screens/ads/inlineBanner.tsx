@@ -99,6 +99,8 @@ const InlineBannerScreen = () => {
                             }}
                             onAdClicked={() => logger.addLog('Did click', setLogs)}
                             onLeftApplication={() => logger.addLog('Did leave application', setLogs)}
+                            onWillPresentScreen={() => logger.addLog('Will present screen', setLogs)}
+                            onDidDismissScreen={() => logger.addLog('Did dismiss screen', setLogs)}
                             onReturnToApplication={() => logger.addLog('Did return to application', setLogs)}
                             onAdImpression={(event: any) => logger.addLog(`Did track impression: ${JSON.stringify(event.nativeEvent.impressionData)}`, setLogs)}
                             onAdClose={() => {
