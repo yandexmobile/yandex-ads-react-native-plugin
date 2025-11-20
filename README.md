@@ -376,6 +376,8 @@ Use the BannerView component to display a banner ad in your application. Set up 
             onAdFailedToLoad={(event: any) => console.log(`Did fail to load with error: ${JSON.stringify(event.nativeEvent)}`)}
             onAdClicked={() => console.log('Did click')}
             onLeftApplication={() => console.log('Did leave application')}
+            onWillPresentScreen={() => console.log('Will present screen')}
+            onDidDismissScreen={() => console.log('Did dismiss screen')}
             onReturnToApplication={() => console.log('Did return to application')}
             onAdImpression={(event: any) => console.log(`Did track impression: ${JSON.stringify(event.nativeEvent.impressionData)}`)}
             onAdClose={() => console.log('Did close')}
@@ -424,7 +426,7 @@ let adRequest = new AdRequest({
 });
 ```
 
-##### 4. Render an Inline Banner Ad
+##### 4. Render an Sticky Banner Ad
 
 Use the BannerView component to display a banner ad in your application. Set up the necessary properties and event callbacks to handle ad events:
 
@@ -439,6 +441,8 @@ Use the BannerView component to display a banner ad in your application. Set up 
             onAdFailedToLoad={(event: any) => console.log(`Did fail to load with error: ${JSON.stringify(event.nativeEvent)}`)}
             onAdClicked={() => console.log('Did click')}
             onLeftApplication={() => console.log('Did leave application')}
+            onWillPresentScreen={() => console.log('Will present screen')}
+            onDidDismissScreen={() => console.log('Did dismiss screen')}
             onReturnToApplication={() => console.log('Did return to application')}
             onAdImpression={(event: any) => console.log(`Did track impression: ${JSON.stringify(event.nativeEvent.impressionData)}`)}
             onAdClose={() => console.log('Did close')}
@@ -458,7 +462,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:7.16.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:7.17.0.0'
 }
 ```
 
@@ -467,24 +471,24 @@ Or you can choose adapters manually and include only their dependencies:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.1.0.8'
-    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.16'
+    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.1.0.10'
+    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.18'
     // for Interstitial and Rewarded ads
     implementation 'com.appnext.sdk:ads:2.7.6.473'
     // For Banners ads
     implementation 'com.appnext.sdk:banners:2.7.6.473'
-    implementation 'com.yandex.ads.mediation:mobileads-bigoads:5.3.0.7'
-    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.24'
-    implementation 'com.yandex.ads.mediation:mobileads-google:23.6.0.7'
-    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.8.2.7'
-    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.8.0.6'
-    implementation 'com.yandex.ads.mediation:mobileads-mintegral:16.9.81.1'
-    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.5.0.9.6'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.16'
-    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.3.1.5'
-    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.4.2.11'
-    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.15.1.2'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.27.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-bigoads:5.5.1.1'
+    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.3.1.26'
+    implementation 'com.yandex.ads.mediation:mobileads-google:23.6.0.9'
+    implementation 'com.yandex.ads.mediation:mobileads-inmobi:10.8.7.1'
+    implementation 'com.yandex.ads.mediation:mobileads-ironsource:8.8.0.8'
+    implementation 'com.yandex.ads.mediation:mobileads-mintegral:16.9.81.3'
+    implementation 'com.yandex.ads.mediation:mobileads-pangle:6.5.1.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.0.2.18'
+    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.3.1.7'
+    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.4.2.13'
+    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.16.1.1'
+    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.27.3.1'
 }
 ```
 
@@ -541,17 +545,17 @@ pod 'YandexMobileAdsMediation', '7.7.0'
 You can choose adapters manually and include their dependencies:
 
 ```ruby
-pod 'AppLovinYandexMobileAdsAdapters', '13.3.1.0'
-pod 'BigoADSYandexMobileAdsAdapters', '4.6.0.10'
-pod 'ChartboostYandexMobileAdsAdapters', '9.9.2.0'
-pod 'GoogleYandexMobileAdsAdapters', '12.2.0.5'
-pod 'InMobiYandexMobileAdsAdapters', '10.8.6.0'
-pod 'IronSourceYandexMobileAdsAdapters', '8.10.0.0'
-pod 'MintegralYandexMobileAdsAdapters', '7.7.9.0'
-pod 'StartAppYandexMobileAdsAdapters', '4.10.4.18'
-pod 'VungleYandexMobileAdsAdapters', '7.4.2.11'
-pod 'UnityAdsYandexMobileAdsAdapters', '4.16.1.0'
-pod 'MyTargetYandexMobileAdsAdapters', '5.28.0.5'
+pod 'AppLovinYandexMobileAdsAdapters', '13.3.1.2'
+pod 'BigoADSYandexMobileAdsAdapters', '4.6.0.12'
+pod 'ChartboostYandexMobileAdsAdapters', '9.9.2.2'
+pod 'GoogleYandexMobileAdsAdapters', '12.2.0.7'
+pod 'InMobiYandexMobileAdsAdapters', '10.8.6.2'
+pod 'IronSourceYandexMobileAdsAdapters', '8.11.0.1'
+pod 'MintegralYandexMobileAdsAdapters', '7.7.9.2'
+pod 'StartAppYandexMobileAdsAdapters', '4.10.4.20'
+pod 'VungleYandexMobileAdsAdapters', '7.4.2.13'
+pod 'UnityAdsYandexMobileAdsAdapters', '4.16.1.2'
+pod 'MyTargetYandexMobileAdsAdapters', '5.28.0.7'
 ```
 
 If you plan to use AdMob, add the GADApplicationIdentifier key with your AdMob ID to your app's Info.plist file.
