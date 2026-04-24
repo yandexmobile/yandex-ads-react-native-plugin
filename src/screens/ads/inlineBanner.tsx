@@ -1,6 +1,6 @@
 import { SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
-import { AdRequest, AdTheme, BannerAdSize, BannerView, Gender, Location } from 'yandex-mobile-ads';
+import { AdTheme, BannerAdSize, BannerView, Gender, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
 import LogView from '../../components/logView';
 import Logger from '../../common/logger';
@@ -41,15 +41,17 @@ const InlineBannerScreen = () => {
     const [logs, setLogs] = useState<string[]>([]);
     const [selectedAdNetwork, setAdNetwork] = useState<AdNetwork | undefined>(bannerAdNetworks[0]);
 
-    let adRequest = new AdRequest({
-        age: '20',
-        contextQuery: 'context-query',
-        contextTags: ['context-tag'],
-        gender: Gender.Male,
-        location: new Location(55.734202, 37.588063),
+    const adRequest = {
+        targeting: {
+            age: '20',
+            contextQuery: 'context-query',
+            contextTags: ['context-tag'],
+            gender: Gender.Male,
+            location: new Location(55.734202, 37.588063),
+        },
         adTheme: AdTheme.Light,
         parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']]),
-    });
+    };
 
     return (
         <SafeAreaView style={[styles.verticalContainer, styles.commonView]}>
@@ -90,8 +92,7 @@ const InlineBannerScreen = () => {
                     {isBannerShowing && adSize && selectedAdNetwork?.adUnitId && (
                         <BannerView
                             size={adSize!}
-                            adUnitId={selectedAdNetwork?.adUnitId!}
-                            adRequest={adRequest}
+                            adRequest={{ adUnitId: selectedAdNetwork?.adUnitId!, ...adRequest }}
                             onAdLoaded={() => logger.addLog('Did load', setLogs)}
                             onAdFailedToLoad={(event: any) => {
                                 setIsBannerShowing(false);

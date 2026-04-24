@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View, AppState, SafeAreaView, type NativeEventSubscription } from 'react-native';
 import React, { useCallback, useState } from 'react';
-import { AdRequestConfiguration, AdTheme, AppOpenAdLoader, AppOpenAd, Gender, Location } from 'yandex-mobile-ads';
+import { AdTheme, AppOpenAdLoader, AppOpenAd, Gender, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
 import LogView from '../../components/logView';
 import Logger from '../../common/logger';
@@ -22,17 +22,18 @@ const loadAd = async (adUnitId: string, updateAdStatus: any, setIsButtonDisabled
     if (!loader) {
         return;
     }
-    let adRequestConfiguration = new AdRequestConfiguration({
+    await loader.loadAd({
         adUnitId: adUnitId,
-        age: '20',
-        contextQuery: 'context-query',
-        contextTags: ['context-tag'],
-        gender: Gender.Female,
-        location: new Location(55.734202, 37.588063),
+        targeting: {
+            age: '20',
+            contextQuery: 'context-query',
+            contextTags: ['context-tag'],
+            gender: Gender.Female,
+            location: new Location(55.734202, 37.588063),
+        },
         adTheme: AdTheme.Light,
         parameters: new Map<string, string>([['param1', 'value1'], ['param2', 'value2']]),
-    });
-    await loader.loadAd(adRequestConfiguration)
+    })
         .then((ad) => {
             logger.addLog('Did load', setLogs);
             updateAdStatus('Ad is ready to be presented', true);
