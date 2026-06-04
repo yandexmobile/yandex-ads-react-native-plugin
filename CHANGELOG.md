@@ -1,18 +1,18 @@
 # Change Log
 
+## Version 8.1.0
+
+#### Updated
+
+* Supported Android Yandex Mobile Ads version 8.1.0
+* Supported iOS Yandex Mobile Ads version 8.1.0
+
 ## Version 8.0.0
 
-#### Added
+#### Updated
 
-* Supported Android Yandex Mobile Ads version 8.0.0
+* Supported Android Yandex Mobile Ads version 8.0.0-beta.2
 * Supported iOS Yandex Mobile Ads version 8.0.0
-* Added `AdInfo` support on ad load — a metadata object is now returned on successful ad loading
-
-#### Changed
-
-* `AdRequestConfiguration` class renamed to `AdRequest`; `AdRequestConfigurationParams` interface renamed to `AdRequestParams`
-* Targeting parameters moved to a separate `AdTargeting` class and passed via the `targeting` field in `AdRequestParams`
-* For `BannerView`, the `adUnitId` prop has been moved from a standalone prop into the `adRequest` object (as the `adUnitId` field)
 
 ## Version 7.18.0
 
