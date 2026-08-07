@@ -20,6 +20,15 @@ buildscript {
 
 allprojects {
     repositories {
+        // BidMachine
+        maven {
+            url = uri("https://artifactory.bidmachine.io/bidmachine")
+            content {
+                includeGroupByRegex("io\\.bidmachine.*")
+                includeGroup("com.explorestack")
+            }
+        }
+
         // IronSource
         maven { url "https://android-sdk.is.com/" }
 

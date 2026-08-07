@@ -17,7 +17,7 @@ end
 target 'YandexMobileAdsSample' do
   config = use_native_modules!
 
-  pod 'YandexMobileAdsMediation', '8.2.1'
+  pod 'YandexMobileAdsMediation', '8.3.0'
   pod 'StartAppYandexMobileAdsAdapters', '4.10.4.18'
 
 
