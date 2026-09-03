@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View, AppState, SafeAreaView, type NativeEventSubscription } from 'react-native';
+import { Text, TouchableOpacity, View, AppState, SafeAreaView, type AppStateStatus, type NativeEventSubscription } from 'react-native';
 import React, { useCallback, useState } from 'react';
 import { AdTheme, AppOpenAdLoader, AppOpenAd, Gender, Location } from 'yandex-mobile-ads';
 import AdScreensStyle from './styles/styles';
@@ -11,6 +11,14 @@ import { useFocusEffect } from '@react-navigation/native';
 
 const logger = new Logger();
 let subscription: NativeEventSubscription | null = null;
+
+// On the first access to AppState React Native delivers a redundant 'change' event with the
+// 'active' state (https://github.com/facebook/react-native/issues/45418), so subscribe upfront,
+// on app start, instead of from the ad presenting code.
+let currentAppState: AppStateStatus = AppState.currentState;
+AppState.addEventListener('change', (nextAppState) => {
+    currentAppState = nextAppState;
+});
 
 const loadAd = async (adUnitId: string, updateAdStatus: any, setIsButtonDisabled: any, setLogs: any) => {
     let loader = await AppOpenAdLoader.create()
@@ -63,8 +71,11 @@ const prepareToShowAd = async (ad: AppOpenAd | undefined, updateAdStatus: any, s
             logger.addLog(`Did track impression: ${JSON.stringify(impressionData)}`, setLogs);
         };
 
-        const handleAppStateChange = (nextAppState: string) => {
-            if (nextAppState === 'active') {
+        let previousAppState = currentAppState;
+        const handleAppStateChange = (nextAppState: AppStateStatus) => {
+            const wasInBackground = previousAppState !== 'active';
+            previousAppState = nextAppState;
+            if (nextAppState === 'active' && wasInBackground) {
                 ad.show();
                 subscription?.remove();
                 subscription = null;
