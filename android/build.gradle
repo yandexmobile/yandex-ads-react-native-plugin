@@ -52,4 +52,17 @@ allprojects {
     }
 }
 
+def pinnedKotlinStdlib = kotlinVersion
+
+allprojects {
+    configurations.matching { !it.name.startsWith('kotlin') }.configureEach {
+        resolutionStrategy {
+            force "org.jetbrains.kotlin:kotlin-stdlib:$pinnedKotlinStdlib"
+            force "org.jetbrains.kotlin:kotlin-stdlib-common:$pinnedKotlinStdlib"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$pinnedKotlinStdlib"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$pinnedKotlinStdlib"
+        }
+    }
+}
+
 apply plugin: "com.facebook.react.rootproject"
