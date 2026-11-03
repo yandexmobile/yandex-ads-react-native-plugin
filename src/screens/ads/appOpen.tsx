@@ -15,7 +15,7 @@ let subscription: NativeEventSubscription | null = null;
 // On the first access to AppState React Native delivers a redundant 'change' event with the
 // 'active' state (https://github.com/facebook/react-native/issues/45418), so subscribe upfront,
 // on app start, instead of from the ad presenting code.
-let currentAppState: AppStateStatus = AppState.currentState;
+let currentAppState = AppState.currentState;
 AppState.addEventListener('change', (nextAppState) => {
     currentAppState = nextAppState;
 });
