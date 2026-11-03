@@ -23,6 +23,11 @@ yarn android
 ```
 
 ### Launch iOS sample:
+
+Use Node 24.4.1 and Xcode 26.2. `yarn ios` prepares SwiftPM dependencies before launching the app.
+To open the project in Xcode, run `yarn setup:ios` first and open `ios/YandexMobileAdsSample.xcodeproj`.
+The empty Podfile is only a project-discovery marker for React Native CLI; do not run `pod install`.
+
 ```sh
 yarn ios
 ```
@@ -32,6 +37,24 @@ yarn ios
 ```sh
 npm install yandex-mobile-ads
 ```
+
+### iOS: CocoaPods
+
+CocoaPods remains supported. After installing or updating the plugin, run
+`pod install` (or `bundle exec pod install`) in `ios` and rebuild. Switching to SPM is optional.
+
+### iOS: Swift Package Manager (experimental)
+
+For an app already using SPM, run after installing or updating the plugin:
+
+```sh
+npx react-native spm
+npx react-native run-ios
+```
+
+To migrate from CocoaPods, commit your project first and run
+`npx react-native spm add --deintegrate`. Other native dependencies must support SPM;
+remove overlapping pods. Build the `.xcodeproj` and commit `.spm-injected.json` with it.
 
 ## Usage
 
@@ -462,7 +485,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:8.5.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:8.6.0.0'
 }
 ```
 
@@ -471,24 +494,24 @@ Or you can choose adapters manually and include only their dependencies:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.6.3.2'
-    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.25'
+    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.6.3.3'
+    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.26'
     // for Interstitial and Rewarded ads
     implementation 'com.appnext.sdk:ads:2.7.6.473'
     // For Banners ads
     implementation 'com.appnext.sdk:banners:2.7.6.473'
-    implementation 'com.yandex.ads.mediation:mobileads-bigoads:6.0.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.14.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-google-nextgen:1.3.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-inmobi:11.4.1.0'
-    implementation 'com.yandex.ads.mediation:mobileads-ironsource:9.6.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-mintegral:17.1.81.0'
-    implementation 'com.yandex.ads.mediation:mobileads-pangle:8.2.0.4.1'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.2'
-    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.8.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.7.8.0'
-    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.20.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.51.2.1'
+    implementation 'com.yandex.ads.mediation:mobileads-bigoads:6.1.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.14.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-google-nextgen:1.3.1.0'
+    implementation 'com.yandex.ads.mediation:mobileads-inmobi:11.4.1.1'
+    implementation 'com.yandex.ads.mediation:mobileads-ironsource:9.6.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-mintegral:17.1.81.1'
+    implementation 'com.yandex.ads.mediation:mobileads-pangle:8.3.0.3.0'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.3'
+    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.8.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.7.8.1'
+    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.20.0.1'
+    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.51.2.2'
 }
 ```
 
@@ -526,37 +549,28 @@ allprojects {
         maven { url 'https://cboost.jfrog.io/artifactory/chartboost-ads/' }
         // AppNext
         maven { url 'https://dl.appnext.com/' }
-        // PetalAds
-        maven { url 'https://developer.huawei.com/repo/' }
     }
 }
 ```
 
 #### iOS
 
-You can use common mediation dependency including all adapters (recommended):
+##### Swift Package Manager
 
-In ```ios/Podfile```:
+Add [yandex-ads-sdk-mediation-ios](https://github.com/yandexmobile/yandex-ads-sdk-mediation-ios)
+in Xcode at a version compatible with the plugin's SDK. Link `YandexMobileAdsMediation`
+or individual adapter products to your app target. Keep `$(inherited) -ObjC` in
+**Other Linker Flags** and apply the Info.plist settings below.
 
-```ruby
-pod 'YandexMobileAdsMediation', '7.7.0'
-```
+The sample configures mediation in [AdsDependencies/Package.swift](ios/AdsDependencies/Package.swift).
 
-You can choose adapters manually and include their dependencies:
+##### CocoaPods
 
-```ruby
-pod 'AppLovinYandexMobileAdsAdapters', '13.6.4.0'
-pod 'BigoADSYandexMobileAdsAdapters', '5.0.6.5'
-pod 'ChartboostYandexMobileAdsAdapters', '9.13.0.1'
-pod 'GoogleYandexMobileAdsAdapters', '13.8.0.0'
-pod 'InMobiYandexMobileAdsAdapters', '11.4.0.1'
-pod 'IronSourceYandexMobileAdsAdapters', '9.3.0.5'
-pod 'MintegralYandexMobileAdsAdapters', '8.0.7.5'
-pod 'StartAppYandexMobileAdsAdapters', '4.14.0.1'
-pod 'VungleYandexMobileAdsAdapters', '7.7.5.1'
-pod 'UnityAdsYandexMobileAdsAdapters', '4.20.0.0'
-pod 'MyTargetYandexMobileAdsAdapters', '5.36.2.5'
-```
+For an app using CocoaPods, add `pod 'YandexMobileAdsMediation'` to its Podfile
+and run `pod install`. Choose a mediation version compatible with the plugin's
+native SDK; do not also add the same dependencies through SwiftPM.
+
+##### Info.plist
 
 If you plan to use AdMob, add the GADApplicationIdentifier key with your AdMob ID to your app's Info.plist file.
 

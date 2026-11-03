@@ -1,5 +1,14 @@
 # Change Log
 
+## Version 8.6.0
+
+* Added experimental iOS SPM support (iOS 15+); CocoaPods remains supported.
+
+#### Updated
+
+* Supported Android Yandex Mobile Ads version 8.6.0
+* Supported iOS Yandex Mobile Ads version 8.6.0
+
 ## Version 8.5.0
 
 #### Updated
