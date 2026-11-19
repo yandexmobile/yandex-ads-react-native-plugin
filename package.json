@@ -1,6 +1,6 @@
 {
   "name": "YandexMobileAdsSample",
-  "version": "8.6.0",
+  "version": "8.7.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -20,7 +20,7 @@
     "react-native-safe-area-context": "5.10.1",
     "react-native-screens": "4.28.0",
     "warn-once": "^0.1.1",
-    "yandex-mobile-ads": "^8.6.0"
+    "yandex-mobile-ads": "^8.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

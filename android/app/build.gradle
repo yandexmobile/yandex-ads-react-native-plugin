@@ -78,6 +78,10 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.yandexmobileadssample"
+    compileOptions {
+        // Google Play Billing 9.2.0+, pulled in by the myTarget adapter, requires it
+        coreLibraryDesugaringEnabled true
+    }
     defaultConfig {
         applicationId "com.yandex.mobile.ads.reactnative.sample"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -108,10 +112,12 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-    implementation 'com.yandex.android:mobileads-mediation:8.6.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.3'
+    implementation 'com.yandex.android:mobileads-mediation:8.7.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.4'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
