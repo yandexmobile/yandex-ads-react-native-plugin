@@ -38,6 +38,20 @@ yarn ios
 npm install yandex-mobile-ads
 ```
 
+### Android
+
+Add the Yandex Mobile Ads Maven repository to your app's dependency repositories.
+
+```groovy
+maven {
+    url = uri("https://ads.maven.yandex.net/")
+    content {
+        includeGroup("com.yandex.android")
+        includeGroupAndSubgroups("com.yandex.ads")
+    }
+}
+```
+
 ### iOS: CocoaPods
 
 CocoaPods remains supported. After installing or updating the plugin, run
@@ -485,7 +499,7 @@ In ```android/app/build.gradle```:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.android:mobileads-mediation:8.6.0.0'
+    implementation 'com.yandex.android:mobileads-mediation:8.7.0.0'
 }
 ```
 
@@ -494,24 +508,24 @@ Or you can choose adapters manually and include only their dependencies:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.6.3.3'
-    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.26'
+    implementation 'com.yandex.ads.mediation:mobileads-applovin:13.6.4.0'
+    implementation 'com.yandex.ads.mediation:mobileads-appnext:2.7.6.473.27'
     // for Interstitial and Rewarded ads
     implementation 'com.appnext.sdk:ads:2.7.6.473'
     // For Banners ads
     implementation 'com.appnext.sdk:banners:2.7.6.473'
-    implementation 'com.yandex.ads.mediation:mobileads-bigoads:6.1.0.0'
-    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.14.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-google-nextgen:1.3.1.0'
-    implementation 'com.yandex.ads.mediation:mobileads-inmobi:11.4.1.1'
-    implementation 'com.yandex.ads.mediation:mobileads-ironsource:9.6.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-mintegral:17.1.81.1'
-    implementation 'com.yandex.ads.mediation:mobileads-pangle:8.3.0.3.0'
-    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.3'
-    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.8.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.7.8.1'
-    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.20.0.1'
-    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.51.2.2'
+    implementation 'com.yandex.ads.mediation:mobileads-bigoads:6.2.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-chartboost:9.14.1.0'
+    implementation 'com.yandex.ads.mediation:mobileads-google-nextgen:1.6.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-inmobi:11.4.1.2'
+    implementation 'com.yandex.ads.mediation:mobileads-ironsource:9.7.0.0'
+    implementation 'com.yandex.ads.mediation:mobileads-mintegral:17.1.81.2'
+    implementation 'com.yandex.ads.mediation:mobileads-pangle:8.3.0.4.0'
+    implementation 'com.yandex.ads.mediation:mobileads-startapp:5.3.1.4'
+    implementation 'com.yandex.ads.mediation:mobileads-tapjoy:14.8.0.2'
+    implementation 'com.yandex.ads.mediation:mobileads-vungle:7.7.9.0'
+    implementation 'com.yandex.ads.mediation:mobileads-unityads:4.20.0.2'
+    implementation 'com.yandex.ads.mediation:mobileads-mytarget:5.51.2.3'
 }
 ```
 
@@ -1497,3 +1511,26 @@ In ```ios/Info.plist```:
 ```
 
 </details>
+
+## Ad audio settings
+
+Use `MobileAds.adVolumeController` to set the initial audio of ads on Android and iOS.
+
+```ts
+import { MobileAds } from 'yandex-mobile-ads';
+
+const audio = MobileAds.adVolumeController;
+await audio.setVolume(0.5);
+await audio.setMuted(true);
+await audio.setMuted(false); // Restores the saved volume of 0.5.
+```
+
+Await the setters before loading ads. Ads use their creative settings until the first
+setter call. Mute preserves the saved volume, and changing volume preserves mute.
+Explicitly unmuting uses the saved volume or `1` if no volume was set. Volume replaces
+the creative's value. Values outside `0..1` are clamped to that range, and `NaN` is ignored.
+
+On Android, the settings apply to ads rendered by the SDK, except In-Stream. On iOS,
+they apply when native video playback is configured, including in banners. Active
+iOS players, In-Stream, HTML/MRAID, and mediated ads are unaffected. The video's own
+unmute control can still enable sound. Device volume and the audio session are unchanged.

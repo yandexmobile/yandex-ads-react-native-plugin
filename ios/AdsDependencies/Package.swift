@@ -6,7 +6,7 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [.library(name: "AdsDependencies", targets: ["AdsDependencies"])],
     dependencies: [
-        .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-mediation-ios", exact: "8.6.0"),
+        .package(url: "https://github.com/yandexmobile/yandex-ads-sdk-mediation-ios", exact: "8.7.0"),
     ],
     targets: [
         .target(
